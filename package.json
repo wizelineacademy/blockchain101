@@ -1,0 +1,17 @@
+{
+  "name": "blockchain101",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node -r esm index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "crypto-js": "^4.0.0",
+    "elliptic": "^6.5.2",
+    "esm": "^3.2.25"
+  }
+}

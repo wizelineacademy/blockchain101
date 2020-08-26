@@ -9,13 +9,11 @@ export default class Block {
      * When a block is created a hash for it has to be calculated. This hash contains the timestamp of creation, transactions to be recorded in the block,
      * and the hash of the previous block. The genesis block (Initial block of the chain) is the only case when we won't have a hash for the previous block.
      * 
-     * UPDATE: ADDED THE data ARGUMENT
      */
     constructor(timestamp, transactions, previousHash = '') {
         this.timestamp = timestamp;
         this.transactions = transactions;
         this.previousHash = previousHash;
-        this.data = data;
         this.nonce = 0;
         // The calculation of the hash must be at the end so to ensure that all data is assigned correctly before calculation
         this.hash = this.calculateHash();
@@ -27,7 +25,7 @@ export default class Block {
      * achieve the desired string.
      */
     calculateHash() {
-        return SHA256(this.previousHash + this.timestamp + JSON.stringify(this.data) + this.nonce).toString();
+        return SHA256(this.previousHash + this.timestamp + JSON.stringify(this.transactions) + this.nonce).toString();
     }
 
     /*

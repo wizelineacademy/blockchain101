@@ -21,7 +21,7 @@ export default class BlockChain {
      * A block is created as a genesis block, this block only contains the creation timestamp and optional data as set properties.
      */
     createGenesisBlock() {
-        return new Block(Date.now(), "Genesis block of simple chain", "");
+        return new Block(Date.now(), [], "");
     }
 
     /*
@@ -40,8 +40,9 @@ export default class BlockChain {
 
     //Incoming miner address
     minePendingTransactions(miningRewardAddress) {
+        const latestBlock = this.getBlock(this.getHeight());
         // Pakcage all pending transactions together in the same block
-        let block = new Block(Date.now(), this.pendingTransactions);
+        let block = new Block(Date.now(), this.pendingTransactions, latestBlock.hash);
         // Mining, that is, constantly trying nonce to make the hash Vluw meet the requirements
         block.mineBlock(this.difficulty);
 

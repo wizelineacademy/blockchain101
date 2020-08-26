@@ -23,9 +23,9 @@ export default class Transaction {
         }
         const txHash = this.calculateHash();
         // Sign the transaction hash with the private key.
-        const sig = signingKey.sign(txHash, 'base64');
+        const sign = signingKey.sign(txHash, 'base64');
         // Convert the signature to the DER format.
-        this.signature = sig.toDER('hex');
+        this.signature = sign.toDER('hex');
         console.log("signature: " + this.signature)
     }
 

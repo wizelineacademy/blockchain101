@@ -11,7 +11,7 @@ export default class BlockChain {
     }
 
     createGenesisBlock() {
-        return new Block(Date.now(), "Genesis block of simple chain", "");
+        return new Block(Date.now(), [], "");
     }
 
     getLatestBlock() {

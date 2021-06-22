@@ -5,7 +5,9 @@ const ec = new Elliptic.ec('secp256k1');
 
 export default class Transaction {
     constructor(fromAddress, toAddress, amount) {
-
+        this.fromAddress = fromAddress;
+        this.toAddress = toAddress;
+        this.amount = amount;
     }
 
     // Calculate the hash in order to do the signature. You need to do this because the hash value will be signed instead of the original information directly. 

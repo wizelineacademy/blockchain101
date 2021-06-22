@@ -31,10 +31,18 @@ export default class BlockChain {
     }
 
     getBalanceOfAddress(address) {
+        // iterate over the chain, block by block
+        // tx by tx, checking for from and to address
 
     }
 
     isChainValid() {
+        // traverse blocks in the chain, having the previous and the current blocks
 
+        // check if all transactions in the block are valid
+
+        // check if current block hash is valid
+
+        // check block previous hash is valid
     }
 }

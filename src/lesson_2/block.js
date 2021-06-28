@@ -16,5 +16,10 @@ export default class Block {
 
     hasValidTransactions() {
         // Traverse all transactions within the block, verifying them one by one
+        for (const tx of this.transactions) {
+            // check if is valid
+            
+        }
+        return true;
     }
 }

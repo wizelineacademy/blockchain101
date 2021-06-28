@@ -60,7 +60,7 @@ export default class BlockChain {
             const previousBlock = this.chain[i - 1];
             // Check if all transactions in the block are valid.
 
-            // check if all transactions in the block are valid
+            // check if current block hash is valid
   
             // check block previous hash is valid
 

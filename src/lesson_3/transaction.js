@@ -30,12 +30,20 @@ export default class Transaction {
     }
 
     isValid() {
-        // The miner fee transaction fromAddress is empty, verification cannot be completed.
+        // The miner transaction is valid
+        if (this.fromAddress === null) return true;
 
-        // Determine if the signature exists
+        // Verify if the source account is the person's address, or more specifically, verify whether the source address is the public key corresponding to the private key.
+        if (signingKey.getPublic('hex') !== this.fromAddress) {
+            throw new Error('You cannot sign transactions for other wallets!')
+        }
+        const txHash = this.calculateHash();
 
         // Transcode fromAddress to get the public key (this process is reversible, as it is just a format conversion process.)
 
         // Use the public key to verify if the signature is correct, or more specifically if the transaction was actually initiated from fromAddress.
+        
+        
+        console.log("signature: " + this.signature);
     }
 }

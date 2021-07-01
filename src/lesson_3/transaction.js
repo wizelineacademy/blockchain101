@@ -37,7 +37,6 @@ export default class Transaction {
         if (signingKey.getPublic('hex') !== this.fromAddress) {
             throw new Error('You cannot sign transactions for other wallets!')
         }
-        // calculate hash
 
         // Transcode fromAddress to get the public key (this process is reversible, as it is just a format conversion process.)
 
